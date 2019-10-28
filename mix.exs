@@ -46,7 +46,6 @@ defmodule ITKHealthCheckex.MixProject do
   defp package do
     [
       maintainers: ["Ramy Tamer", "Islam Hamdi"],
-      organization: "inside-track",
       files: ~w(lib config test .formatter.exs mix.exs README*),
       licenses: ["MIT"],
       links: %{

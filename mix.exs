@@ -47,8 +47,7 @@ defmodule ITKHealthCheckex.MixProject do
     [
       maintainers: ["Ramy Tamer", "Islam Hamdi"],
       organization: "inside-track",
-      files: ~w(lib priv .formatter.exs mix.exs README* readme* LICENSE*
-                license* CHANGELOG* changelog* src),
+      files: ~w(lib config test .formatter.exs mix.exs README*),
       licenses: ["MIT"],
       links: %{
         "GitHub" => @project_url

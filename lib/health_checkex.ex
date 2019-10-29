@@ -47,7 +47,7 @@ defmodule HealthCheckex do
     quote do
       def init(options), do: options
 
-      def call(conn = %Plug.Conn{path_info: [endpoint], method: "GET"}, _options) do
+      def call(conn, _options) do
         options = Application.get_all_env(:itk_health_checkex)
 
         options |> Keyword.get(:endpoint) |> do_call(conn, options)

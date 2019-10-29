@@ -1,7 +1,5 @@
 defmodule Checker do
-  @moduledoc """
-  Health Checks runner.
-  """
+  @moduledoc false
 
   alias Report
 

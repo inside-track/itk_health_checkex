@@ -2,7 +2,7 @@ defmodule ITKHealthCheckex.MixProject do
   use Mix.Project
 
   @project_url "https://github.com/inside-track/itk_health_checkex"
-  @version "0.0.3"
+  @version "0.0.4"
 
   def project do
     [

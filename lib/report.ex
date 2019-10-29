@@ -1,7 +1,5 @@
 defmodule Report do
-  @moduledoc """
-  Health checks results report.
-  """
+  @moduledoc false
 
   defstruct http_code: 200, passing: [], failing: [], warning: [], timeout: [], checks: []
 

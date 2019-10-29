@@ -4,7 +4,7 @@ defmodule HealthCheckex do
   """
 
   @doc """
-  Defines a macro to hold the check logic and assign it a meaningful name.
+  Macro that hold the health check logic and assign it a meaningful name for easy referencing.
 
   You should either return in the check block one of these values:
   `:ok`
@@ -12,23 +12,23 @@ defmodule HealthCheckex do
   `{:warn, result}`
   `{:fail, result}`
 
-  Returns `{:ok, :service} | {:ok, :service, result} | {:fail, :service, inspect(result)} | {:warn, :service, result} | {:error, :service, "Didn't get the right response from the check."}`
+  Returns `{:ok, :service} | {:ok, :service, result} | {:fail, :service, result} | {:warn, :service, result} | {:error, :service, "Didn't get the right response from the check."}`
 
   ## Examples
-    iex> healthcheck(:service, do: :ok)
-    {:ok, :service}
+      iex> healthcheck(:service, do: :ok)
+      {:ok, :service}
 
-    iex> healthcheck(:service, do: {:ok, "message"})
-    {:ok, :service, "message"}
+      iex> healthcheck(:service, do: {:ok, "message"})
+      {:ok, :service, "message"}
 
-    iex> healthcheck(:service, do: {:warn, "message"})
-    {:warn, :service, "message"}
+      iex> healthcheck(:service, do: {:warn, "message"})
+      {:warn, :service, "message"}
 
-    iex> healthcheck(:service, do: {:fail, "message"})
-    {:fail, :service, "message"}
+      iex> healthcheck(:service, do: {:fail, "message"})
+      {:fail, :service, "message"}
 
-    iex> healthcheck(:service, do: :something_else)
-    {:error, service, "Didn't get the right response from the check."}
+      iex> healthcheck(:service, do: :something_else)
+      {:error, service, "Didn't get the right response from the check."}
   """
   defmacro healthcheck(name, do: block) do
     quote do

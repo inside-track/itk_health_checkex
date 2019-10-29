@@ -1,4 +1,4 @@
-defmodule ITK.HealthCheckex do
+defmodule HealthCheckex do
   @moduledoc """
   Documentation for ITK Healthcheckex.
   """
@@ -36,10 +36,10 @@ defmodule ITK.HealthCheckex do
     quote do
       Module.register_attribute(__MODULE__, :health_checks, accumulate: true)
 
-      import ITK.HealthCheckex
+      import HealthCheckex
       import Plug.Conn
 
-      @before_compile ITK.HealthCheckex
+      @before_compile HealthCheckex
     end
   end
 
@@ -57,8 +57,8 @@ defmodule ITK.HealthCheckex do
           when path == endpoint do
         {code, report} =
           __MODULE__
-          |> ITK.Checker.run(@health_checks, options)
-          |> ITK.Report.generate()
+          |> Checker.run(@health_checks, options)
+          |> Report.generate()
 
         conn
         |> put_resp_content_type("application/json")

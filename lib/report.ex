@@ -1,4 +1,4 @@
-defmodule ITK.Report do
+defmodule Report do
   @moduledoc """
   Health checks results report.
   """

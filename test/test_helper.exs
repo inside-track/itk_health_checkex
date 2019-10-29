@@ -1,12 +1,12 @@
 ExUnit.start()
 
 defmodule HealthCheckerPlug do
-  use ITK.HealthCheckex
+  use HealthCheckex
 end
 
 # Plug Testing dummies for the health check.
 defmodule HealthyPlug do
-  use ITK.HealthCheckex
+  use HealthCheckex
 
   healthcheck(:service_3, do: {:warn, RuntimeError})
   healthcheck(:service_2, do: {:ok, "some result message"})
@@ -14,13 +14,13 @@ defmodule HealthyPlug do
 end
 
 defmodule FailedPlug do
-  use ITK.HealthCheckex
+  use HealthCheckex
 
   healthcheck(:service_1, do: {:fail, TryClauseError})
 end
 
 defmodule TimeoutPlug do
-  use ITK.HealthCheckex
+  use HealthCheckex
 
   # :timer.sleep returns :ok after finishing
   healthcheck(:service_1, do: :timer.sleep(700))
@@ -28,7 +28,7 @@ defmodule TimeoutPlug do
 end
 
 defmodule NonMatchedCheckResponsePlug do
-  use ITK.HealthCheckex
+  use HealthCheckex
 
   healthcheck(:service_1, do: {:other, "some other reason"})
 end

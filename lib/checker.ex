@@ -1,11 +1,11 @@
-defmodule ITK.Checker do
+defmodule Checker do
   @moduledoc """
   Health Checks runner.
   """
 
-  alias ITK.Report
+  alias Report
 
-  @spec run(module(), list(atom()), keyword()) :: %ITK.Report{}
+  @spec run(module(), list(atom()), keyword()) :: %Report{}
   def run(module, checks, options) do
     timeout = options |> Keyword.get(:timeout)
     report = checks |> Report.build()

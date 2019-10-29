@@ -1,7 +1,7 @@
-defmodule ITK.ReportTest do
+defmodule ReportTest do
   use ExUnit.Case
-  doctest ITK.Report
-  alias ITK.Report
+  doctest Report
+  alias Report
 
   test "build/1" do
     report = Report.build([:service_1, :service_2])

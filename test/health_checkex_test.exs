@@ -1,7 +1,7 @@
-defmodule ITK.HealthCheckexTest do
+defmodule HealthCheckexTest do
   use ExUnit.Case
-  # doctest ITK.HealthCheckex
-  # alias ITK.HealthCheckex
+  # doctest HealthCheckex
+  # alias HealthCheckex
 
   use Plug.Test
 

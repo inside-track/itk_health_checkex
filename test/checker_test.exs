@@ -1,6 +1,6 @@
-defmodule ITK.CheckerTest do
+defmodule CheckerTest do
   use ExUnit.Case
-  alias ITK.Checker
+  alias Checker
 
   describe "run/3" do
     test "all passing" do

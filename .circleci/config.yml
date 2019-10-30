@@ -34,9 +34,6 @@ workflows:
       - check:
           requires:
             - build
-          filters:
-            branches:
-              ignore: master
 
 notify:
   webhooks:

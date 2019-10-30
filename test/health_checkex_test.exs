@@ -19,7 +19,9 @@ defmodule HealthCheckexTest do
 
   test "it ignores all other methods" do
     [:post, :put, :delete]
-    |> Enum.each(fn method -> assert method |> conn("/foo") |> HealthCheckerPlug.call(@opts) |> Map.get(:state) == :unset end)
+    |> Enum.each(fn method ->
+      assert method |> conn("/foo") |> HealthCheckerPlug.call(@opts) |> Map.get(:state) == :unset
+    end)
   end
 
   test "it responds to the defined endpoint", %{conn: conn} do

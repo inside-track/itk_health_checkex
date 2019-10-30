@@ -6,6 +6,7 @@ defmodule ReportTest do
   test "build/1" do
     report = Report.build([:service_1, :service_2])
 
+    assert %Report{} = report
     assert 2 = report.checks |> length()
     assert 200 = report.http_code
 

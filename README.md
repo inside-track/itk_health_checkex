@@ -12,7 +12,7 @@ The package can be installed by adding `itk_health_checkex` to your list of depe
 ```elixir
 def deps do
   [
-    {:itk_health_checkex, "~> 0.0.9"}
+    {:itk_health_checkex, "~> 1.0.0"}
   ]
 end
 ```
@@ -105,3 +105,12 @@ and if all the checks return a `{:warn, result}` the app will be considered heal
     :ok
   end
 ```
+
+## Updating the package
+
+Whenever you make a change and add the appropriate tests make sure to bump the version module attribute
+in `mix.exs` file and in the `README.md` file; commit and push your changes then run
+```shell
+$ mix hex.publish
+```
+from the command line once the CI pipeline pass successfully.

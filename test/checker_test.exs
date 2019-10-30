@@ -34,6 +34,15 @@ defmodule CheckerTest do
       assert 1 = report.timeout |> length
       assert [:service_1] = report.timeout
     end
+
+    test "any thing else" do
+      report = NonMatchedCheckResponsePlug |> Checker.run([:service_1], options())
+
+      assert 200 = report.http_code
+
+      [:passing, :failing, :timeout, :warning]
+      |> Enum.each(fn check -> assert 0 = report |> Map.get(check) |> length() end)
+    end
   end
 
   defp options(), do: Application.get_all_env(:itk_health_checkex)

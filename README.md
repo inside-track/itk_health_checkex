@@ -12,7 +12,7 @@ The package can be installed by adding `itk_health_checkex` to your list of depe
 ```elixir
 def deps do
   [
-    {:itk_health_checkex, "~> 1.0.0"}
+    {:itk_health_checkex, "~> 1.0.1"}
   ]
 end
 ```

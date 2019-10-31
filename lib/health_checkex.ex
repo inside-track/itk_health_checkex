@@ -75,7 +75,9 @@ defmodule HealthCheckex do
       def init(options), do: options
 
       def call(conn, _options) do
-        options = Application.get_all_env(:itk_health_checkex)
+        options =
+          [endpoint: "healthcheck", timeout: 29_000]
+          |> Keyword.merge(Application.get_all_env(:itk_health_checkex))
 
         options |> Keyword.get(:endpoint) |> do_call(conn, options)
       end
